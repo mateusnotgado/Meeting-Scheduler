@@ -7,11 +7,11 @@ Este projeto é um solucionador automático de agendamento de reuniões usando *
 ## 📁 Estrutura do Projeto
 
 ```
-MeetingSchedulerTimeGrains/
+Meeting-scheduler/
 │
 ├── .gitignore
 ├── README.md
-└── meet.sched.timegrains/
+└── MeetingSchedulerimeGrains/
     ├── pom.xml
     └── src/
         ├── main/
@@ -33,7 +33,7 @@ MeetingSchedulerTimeGrains/
 
 ```bash
 git clone https://github.com/seu-usuario/MeetingSchedulerTimeGrains.git
-cd MeetingSchedulerTimeGrains/meet.sched.timegrains
+cd Meeting-Scheduler/MettingSchedulerTimeGrains
 ```
 
 ### 2. Compile o projeto com Maven
@@ -117,6 +117,6 @@ Sinta-se livre para abrir issues ou pull requests para melhorar o projeto!
 ## 🧠 Autor
 
 Desenvolvido por **Mateus Tavares**  
-📧 mateus@example.com
+📧 mateus.costa.beltra@gmail.com
 
 ---
