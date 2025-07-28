@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>MeetingSchedulerTimeGrains</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <name>MeetingSchedulerTimeGrains</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
+
+<properties>
+  <maven.compiler.release>21</maven.compiler.release>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  <optaplanner.version>9.44.0.Final</optaplanner.version>
+  <junit.jupiter.version>5.10.0</junit.jupiter.version>
+</properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.optaplanner</groupId>
+        <artifactId>optaplanner-bom</artifactId>
+        <version>${optaplanner.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <!-- OptaPlanner Core -->
+    <dependency>
+      <groupId>org.optaplanner</groupId>
+      <artifactId>optaplanner-core</artifactId>
+    </dependency>
+
+    <!-- Logging -->
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.2.3</version>
+      <scope>runtime</scope>
+    </dependency>
+
+    <!-- OptaPlanner Test support -->
+    <dependency>
+      <groupId>org.optaplanner</groupId>
+      <artifactId>optaplanner-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- JUnit 5 -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>${junit.jupiter.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>${junit.jupiter.version}</version>
+      <scope>test</scope>
+    </dependency>
+ <!-- Mockito -->
+  <dependency>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-core</artifactId>
+    <version>5.12.0</version>
+    <scope>test</scope>
+  </dependency>
+  <dependency>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-junit-jupiter</artifactId>
+    <version>5.12.0</version>
+    <scope>test</scope>
+  </dependency>
+ <!-- Núcleo do POI -->
+    <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi</artifactId>
+        <version>5.2.3</version>
+    </dependency>
+
+    <!-- Leitura de arquivos .xlsx (XSSF) -->
+    <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi-ooxml</artifactId>
+        <version>5.2.3</version>
+    </dependency>
+    <dependency>
+  <groupId>org.optaplanner</groupId>
+  <artifactId>optaplanner-benchmark</artifactId>
+</dependency>
+<dependency>
+  <groupId>org.optaplanner</groupId>
+  <artifactId>optaplanner-persistence-xstream</artifactId>
+  <version>${optaplanner.version}</version>
+</dependency>
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-lang3</artifactId>
+    <version>3.12.0</version> <!-- Use latest version -->
+</dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <!-- Executar a aplicação -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.0.0</version>
+        <configuration>
+          <mainClass>MeetingSchedulerApp</mainClass>
+        </configuration>
+      </plugin>
+
+      <!-- Habilitar testes com JUnit 5 -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.1.2</version>
+        <configuration>
+          <includes>
+            <include>**/*Test.java</include>
+          </includes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

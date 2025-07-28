@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<solver xmlns="https://www.optaplanner.org/xsd/solver"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://www.optaplanner.org/xsd/solver https://www.optaplanner.org/xsd/solver/solver.xsd">
+
+
+    <!-- Define a classe da solução -->
+    <solutionClass>com.mycompany.app.domain.SchedulerSolution</solutionClass>
+
+    <!-- Define a classe das entidades (variáveis planejadas) -->
+    <entityClass>com.mycompany.app.domain.Topic</entityClass>
+
+    <!-- Usa constraint provider -->
+    <scoreDirectorFactory>
+        <constraintProviderClass>
+           com.mycompany.app.score.SchedulerConstraintProvider</constraintProviderClass>
+    </scoreDirectorFactory>
+
+    <!-- Terminação -->
+    <termination>
+        <spentLimit>PT5M</spentLimit>
+    </termination>
+  <constructionHeuristic>
+    <constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>
+  </constructionHeuristic>
+<localSearch>
+    <termination>
+        <bestScoreLimit>0hard/*medium/*soft</bestScoreLimit> <!-- Limiar personalizado -->
+    </termination>
+    <localSearchType>LATE_ACCEPTANCE</localSearchType>
+</localSearch>
+    <!-- Fase de refinamento: busca local -->
+   <localSearch>
+    <termination>
+        <unimprovedStepCountLimit>4000</unimprovedStepCountLimit>
+    </termination>
+    <localSearchType>LATE_ACCEPTANCE</localSearchType>
+</localSearch>
+
+
+</solver>
