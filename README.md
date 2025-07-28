@@ -102,7 +102,7 @@ O horário de início é formatado automaticamente em `HH:mm` com ajuste para ho
 
 ## 🤝 Requisitos
 
-- Java 17+
+- Java 21+
 - Maven 3.6+
 - Planilha Excel no formato esperado (ver exemplos em `unsolved/`)
 
